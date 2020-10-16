@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--直接从MyBatis的官网找的设置-->
+        <!--驼峰命名规则-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.atguigu.crud.bean"/>
+    </typeAliases>
+    <!--引入分页插件PageHelper-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--参数合理化参数，设置为true后不会到达一个不合理的页码-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
